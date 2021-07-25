@@ -3,7 +3,9 @@ pipelineloadansible "127.0.0.1"
 
 pipeline {
 
-agent any
+agent {
+label "awscloudagent"
+}
 stages{
 stage("build"){
 steps{
