@@ -16,7 +16,7 @@ script{
 def ansible = new ansible()
 ansible.AnsibleDeploy("127.0.0.1","-m ping")
 def tools = new PrintTools()
-PrintTools.PrintMes("我成功了")
+tools.PrintMes("我成功了")
 }
 
 }
