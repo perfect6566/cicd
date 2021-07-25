@@ -1,13 +1,9 @@
 #!groovy
-import org.cicd.tools
-import org.cicd.ansible
+
 
 
 def call(hosts){
-def tools = new tools()
-//tools指代的是src/org/devops/tools.groovy脚本文件
-
-def ansible = new ansible()
+ 
 
 pipeline
 {
@@ -17,8 +13,9 @@ pipeline
          stage("build"){
            steps {
               script {
-             
-                ansible.AnsibleDeploy("${hosts}","-m ping")      
+             def ansible=new org.cicd.ansible()
+
+                   ansible.AnsibleDeploy("${hosts}","-m ping")      
                  
               }
             }
@@ -29,6 +26,7 @@ pipeline
    post {
         always {
              script{
+                  def tools=new org.cicd.tools()
                   tools.PrintMes("1.1.1.1")
              }
         }
