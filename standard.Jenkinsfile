@@ -1,5 +1,5 @@
 #!groovy
-@Library('mysharedlibs@main') _
+@Library('mylibs@main') _
  
 
 
