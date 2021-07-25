@@ -11,7 +11,7 @@ def ansible = new org.cicd.ansible()
 
 pipeline
 {
-     agent {  label "master"  }
+     agent {  label "awscloudagent"  }
      
      stages{
          stage("build"){
